@@ -1,4 +1,4 @@
-Release notes Karbowanec 1.3.0
+Release notes Balkancoin 1.3.0
 
 - Bytecoin core 1.0.11 transition
 - New difficulty algorithm
