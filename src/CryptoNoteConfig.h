@@ -89,7 +89,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "balkancoin";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001d38999d21e029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017ecfe20f0d176c94562c86c673d4e954e5f2ba75cde34757e25524c41fb657be";
 
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  1;
 const uint8_t  BLOCK_MAJOR_VERSION_1                         =  1;
