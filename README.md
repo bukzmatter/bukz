@@ -34,7 +34,7 @@ To build, change to a directory where this file is located, and run theas comman
 mkdir build
 cd build
 cmake -G "Visual Studio 12 2013 Win64" ..
+msbuild Balkancoin.sln /p:Configuration=Release
 ```
 
-And then do Build.
 Good luck!
