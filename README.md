@@ -1,6 +1,6 @@
-The karbowanec is Ukrainian national cryptocurrency, just like Bitcoin but more anonymous and privacy centric with opaque and more analysis resistant blockchain. It is people's electronic cash, not connected to government or officials.
+Balkancoin is cryptocurrency, just like Bitcoin but more anonymous and privacy centric with opaque and more analysis resistant blockchain. It is people's electronic cash, not connected to government or officials.
 
-## Building Karbo 
+## Building Balkancoin 
 
 ### On *nix
 
@@ -33,7 +33,7 @@ To build, change to a directory where this file is located, and run theas comman
 ```
 mkdir build
 cd build
-cmake -G "Visual Studio 12 Win64" ..
+cmake -G "Visual Studio 12 2013 Win64" ..
 ```
 
 And then do Build.
