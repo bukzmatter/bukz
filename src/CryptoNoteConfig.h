@@ -120,7 +120,7 @@ const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; //
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "8f80f9a5a434a9f1510d13336228debfee9c918ce505efe225d8c94d045fa115";
 
-const char* const SEED_NODES[] = { 
+const char* const SEED_NODES[] = {
   "192.169.140.225:37777",
   "192.169.142.165:37777"
 };
@@ -136,6 +136,3 @@ const std::initializer_list<CheckpointData> CHECKPOINTS = {
 } // CryptoNote
 
 #define ALLOW_DEBUG_COMMANDS
-
-
-
