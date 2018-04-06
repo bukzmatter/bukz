@@ -697,7 +697,7 @@ difficulty_type Blockchain::getDifficultyForNextBlock() {
   size_t offset;
   if (BlockMajorVersion == BLOCK_MAJOR_VERSION_2) {
 	 offset = m_blocks.size() - std::min(m_blocks.size(), static_cast<uint64_t>(m_currency.difficultyBlocksCount2()));
-  } 
+  }
   else if (BlockMajorVersion >= BLOCK_MAJOR_VERSION_3) {
      offset = m_blocks.size() - std::min(m_blocks.size(), static_cast<uint64_t>(m_currency.difficultyBlocksCount3()));
   }
@@ -1700,7 +1700,7 @@ uint64_t Blockchain::get_adjusted_time() {
 bool Blockchain::check_block_timestamp_main(const Block& b) {
   if (b.timestamp > get_adjusted_time() + m_currency.blockFutureTimeLimit()) {
     logger(INFO, BRIGHT_WHITE) <<
-      "Timestamp of block with id: " << get_block_hash(b) << ", " << b.timestamp << ", bigger than adjusted time + 28 min.";
+      "Timestamp of block with id: " << get_block_hash(b) << ", " << b.timestamp << ", bigger than adjusted time + 210 sec.";
     return false;
   }
 
