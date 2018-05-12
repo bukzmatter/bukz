@@ -56,6 +56,9 @@
 #include <System/Ipv4Address.h>
 
 std::string remote_fee_address;
+namespace{
+	Tools::PasswordContainer pwd_container;
+}
 
 namespace CryptoNote
 {
@@ -208,7 +211,6 @@ namespace CryptoNote
     Logging::LoggerManager& m_logManager;
     System::Dispatcher& m_dispatcher;
     Logging::LoggerRef logger;
-    Tools::PasswordContainer pwd_container;
 
     std::unique_ptr<CryptoNote::NodeRpcProxy> m_node;
     std::unique_ptr<CryptoNote::IWalletLegacy> m_wallet;

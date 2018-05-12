@@ -57,7 +57,7 @@ const uint64_t MAX_TX_MIXIN_SIZE                             = 20;
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
 const size_t   DIFFICULTY_WINDOW                             = 720; // blocks
 const size_t   DIFFICULTY_WINDOW_V2                          = 720; // blocks
-const size_t   DIFFICULTY_WINDOW_V3                          = 120 + 1; // blocks (add one to compensate off-by-one in difficulty calculation)
+const size_t   DIFFICULTY_WINDOW_V3                          = 120; // blocks
 const size_t   DIFFICULTY_CUT                                = 60;  // timestamps to cut after sorting
 const size_t   DIFFICULTY_LAG                                = 15;  // !!!
 static_assert(2 * DIFFICULTY_CUT <= DIFFICULTY_WINDOW - 2, "Bad DIFFICULTY_WINDOW or DIFFICULTY_CUT");
@@ -145,7 +145,8 @@ const std::initializer_list<CheckpointData> CHECKPOINTS = {
   {31000, "b7720283062e0be92cdee82b6b694461a8076695a238a79827a2788ab0494dee"},
   {61000, "d796d6b21bac7a6d1f280a20280c2dad1b79d0394704a1a62b52b9b3ac31993f"},
   {121000, "770f0e091e9f82dde21e4d40bd0418c76bf4856820b00900c46436500eb2fbdf"},
-  {241000, "1dc96ed39253e7e9de54faba423ea9d6bb5c6270f4da3b26c0d1052369ab4ed2"}
+  {241000, "1dc96ed39253e7e9de54faba423ea9d6bb5c6270f4da3b26c0d1052369ab4ed2"},
+  {371000, "467e9070b8c9fa896bf809f0ae8796ba593f405ade4e6c4d5b1952144c259d75"}
 };
 
 } // CryptoNote
