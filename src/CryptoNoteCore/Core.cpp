@@ -126,7 +126,12 @@ bool core::get_alternative_blocks(std::list<Block>& blocks) {
 
 size_t core::get_alternative_blocks_count() {
   return m_blockchain.getAlternativeBlocksCount();
-  }
+}
+
+std::time_t core::getStartTime() const {
+  return start_time;
+}
+
   //-----------------------------------------------------------------------------------------------
 bool core::init(const CoreConfig& config, const MinerConfig& minerConfig, bool load_existing) {
     m_config_folder = config.configFolder;
@@ -138,6 +143,8 @@ bool core::init(const CoreConfig& config, const MinerConfig& minerConfig, bool l
 
     r = m_miner->init(minerConfig);
   if (!(r)) { logger(ERROR, BRIGHT_RED) << "Failed to initialize blockchain storage"; return false; }
+
+  start_time = std::time(nullptr);
 
   return load_state_data();
 }
@@ -448,8 +455,7 @@ bool core::get_block_template(Block& b, const AccountPublicAddress& adr, difficu
 
   size_t txs_size;
   uint64_t fee;
-  if (!m_mempool.fill_block_template(b, median_size, m_currency.maxBlockCumulativeSize(height), already_generated_coins,
-    txs_size, fee)) {
+  if (!m_mempool.fill_block_template(b, median_size, m_currency.maxBlockCumulativeSize(height), already_generated_coins, txs_size, fee)) {
     return false;
   }
 
@@ -1059,6 +1065,10 @@ uint64_t core::getNextBlockDifficulty() {
 
 uint64_t core::getTotalGeneratedAmount() {
   return m_blockchain.getCoinsInCirculation();
+}
+
+uint8_t core::getBlockMajorVersionForHeight(uint32_t height) const {
+  return m_blockchain.getBlockMajorVersionForHeight(height);
 }
 
 bool core::handleIncomingTransaction(const Transaction& tx, const Crypto::Hash& txHash, size_t blobSize, tx_verification_context& tvc, bool keptByBlock) {
