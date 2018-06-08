@@ -199,14 +199,13 @@ int main(int argc, char* argv[])
     }
 
 	std::cout <<
-"\n                                                    \n"
-"   ______       _ _                         _        \n"
-"   | ___ \     | | |                       (_)       \n"
-"   | |_/ / __ _| | | ____ _ _ __   ___ ___  _ _ __   \n"
-"   | ___ \/ _` | | |/ / _` | '_ \ / __/ _ \| | '_ \  \n"
-"   | |_/ / (_| | |   < (_| | | | | (_| (_) | | | | | \n"
-"   \____/ \__,_|_|_|\_\__,_|_| |_|\___\___/|_|_| |_| \n"
-"                                                     \n" << ENDL;
+"\n                                                                                                          \n"
+"   oooooooooo              o888  oooo                                                     o88              \n"
+"    888    888   ooooooo    888   888  ooooo  ooooooo   oo oooooo    ooooooo     ooooooo  oooo  oo oooooo  \n"
+"    888oooo88    ooooo888   888   888o888     ooooo888   888   888 888     888 888     888 888   888   888 \n"
+"    888    888 888    888   888   8888 88o  888    888   888   888 888         888     888 888   888   888 \n"
+"   o888ooo888   88ooo88 8o o888o o888o o888o 88ooo88 8o o888o o888o  88ooo888    88ooo88  o888o o888o o888o\n"
+"                                                                                                           \n" << ENDL;
 
     logger(INFO) << "Module folder: " << argv[0];
 
