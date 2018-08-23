@@ -76,9 +76,27 @@ struct GetStatus {
     uint32_t knownBlockCount;
     std::string lastBlockHash;
     uint32_t peerCount;
+    uint64_t minimalFee;
 
     void serialize(CryptoNote::ISerializer& serializer);
   };
+};
+
+struct ValidateAddress {
+	struct Request {
+		std::string address;
+		
+		void serialize(CryptoNote::ISerializer& serializer);
+	};
+
+	struct Response {
+		bool isvalid;
+		std::string address;
+		std::string spendPublicKey;
+		std::string viewPublicKey;
+
+		void serialize(CryptoNote::ISerializer& serializer);
+	};
 };
 
 struct GetAddresses {
