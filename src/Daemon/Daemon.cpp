@@ -198,15 +198,6 @@ int main(int argc, char* argv[])
       return 0;
     }
 
-	std::cout <<
-"\n                                                                                                          \n"
-"   oooooooooo              o888  oooo                                                     o88              \n"
-"    888    888   ooooooo    888   888  ooooo  ooooooo   oo oooooo    ooooooo     ooooooo  oooo  oo oooooo  \n"
-"    888oooo88    ooooo888   888   888o888     ooooo888   888   888 888     888 888     888 888   888   888 \n"
-"    888    888 888    888   888   8888 88o  888    888   888   888 888         888     888 888   888   888 \n"
-"   o888ooo888   88ooo88 8o o888o o888o o888o 88ooo88 8o o888o o888o  88ooo888    88ooo88  o888o o888o o888o\n"
-"                                                                                                           \n" << ENDL;
-
     logger(INFO) << "Module folder: " << argv[0];
 
     bool testnet_mode = command_line::get_arg(vm, arg_testnet_on);
