@@ -26,22 +26,22 @@
 namespace CryptoNote {
 namespace parameters {
 
-const uint64_t DIFFICULTY_TARGET                             = 30; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 90; // seconds
 const uint64_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x1c624f; // addresses start with "bkc"
-const size_t   CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 10;
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x19b50; // addresses start with "bukz"
+const size_t   CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 28;
 const size_t   CRYPTONOTE_TX_SPENDABLE_AGE                   = 6;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = DIFFICULTY_TARGET * 7;
 
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 15;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(69000000000000000);
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(3141592653589793);
 const uint64_t TAIL_EMISSION_REWARD                          = UINT64_C(100000000);
 const size_t CRYPTONOTE_COIN_VERSION                         = 1;
-const unsigned EMISSION_SPEED_FACTOR                         = 23;
+const unsigned EMISSION_SPEED_FACTOR                         = 19;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
@@ -56,9 +56,9 @@ const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100000);
 const uint64_t MAX_TX_MIXIN_SIZE                             = 20;
 
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
-const size_t   DIFFICULTY_WINDOW                             = 720; // blocks
-const size_t   DIFFICULTY_WINDOW_V2                          = 720; // blocks
-const size_t   DIFFICULTY_WINDOW_V3                          = 120; // blocks
+const size_t   DIFFICULTY_WINDOW                             = 128; // blocks
+const size_t   DIFFICULTY_WINDOW_V2                          = 128; // blocks
+const size_t   DIFFICULTY_WINDOW_V3                          = 128; // blocks
 const size_t   DIFFICULTY_CUT                                = 60;  // timestamps to cut after sorting
 const size_t   DIFFICULTY_LAG                                = 15;  // !!!
 static_assert(2 * DIFFICULTY_CUT <= DIFFICULTY_WINDOW - 2, "Bad DIFFICULTY_WINDOW or DIFFICULTY_CUT");
@@ -78,8 +78,8 @@ const size_t   FUSION_TX_MAX_SIZE                            = CRYPTONOTE_BLOCK_
 const size_t   FUSION_TX_MIN_INPUT_COUNT                     = 12;
 const size_t   FUSION_TX_MIN_IN_OUT_COUNT_RATIO              = 4;
 
-const uint32_t UPGRADE_HEIGHT_V2                             = 60000;
-const uint32_t UPGRADE_HEIGHT_V3                             = 350000;
+const uint32_t UPGRADE_HEIGHT_V2                             = 1;
+const uint32_t UPGRADE_HEIGHT_V3                             = 2;
 const unsigned UPGRADE_VOTING_THRESHOLD                      = 90; // percent
 const uint32_t UPGRADE_VOTING_WINDOW                         = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
 const uint32_t UPGRADE_WINDOW                                = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
@@ -95,8 +95,8 @@ const char     CRYPTONOTE_BLOCKCHAIN_INDICES_FILENAME[]      = "blockchainindice
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "balkancoin";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001d38999d21e029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017ecfe20f0d176c94562c86c673d4e954e5f2ba75cde34757e25524c41fb657be";
+const char     CRYPTONOTE_NAME[]                             = "bukz";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "";
 
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  1;
 const uint8_t  BLOCK_MAJOR_VERSION_1                         =  1;
@@ -109,8 +109,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  128;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  37777;
-const int      RPC_DEFAULT_PORT                              =  38777;
+const int      P2P_DEFAULT_PORT                              =  17988;
+const int      RPC_DEFAULT_PORT                              =  18988;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -133,9 +133,8 @@ const uint32_t P2P_IDLE_CONNECTION_KILL_INTERVAL             = (5 * 60);      //
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "8f80f9a5a434a9f1510d13336228debfee9c918ce505efe225d8c94d045fa115";
 
 const char* const SEED_NODES[] = {
-  "192.169.140.225:37777",
-  "192.169.142.165:37777",
-  "95.179.145.244:37777"
+  "97.107.140.100:17988",
+  "50.116.16.136:17988"
 };
 
 struct CheckpointData {
@@ -144,13 +143,9 @@ struct CheckpointData {
 };
 
 const std::initializer_list<CheckpointData> CHECKPOINTS = {
-  {31000, "b7720283062e0be92cdee82b6b694461a8076695a238a79827a2788ab0494dee"},
-  {61000, "d796d6b21bac7a6d1f280a20280c2dad1b79d0394704a1a62b52b9b3ac31993f"},
-  {121000, "770f0e091e9f82dde21e4d40bd0418c76bf4856820b00900c46436500eb2fbdf"},
-  {241000, "1dc96ed39253e7e9de54faba423ea9d6bb5c6270f4da3b26c0d1052369ab4ed2"},
-  {371000, "467e9070b8c9fa896bf809f0ae8796ba593f405ade4e6c4d5b1952144c259d75"},
-  {401000, "148c7b8ea41694eb65767eced9ccee882401243d760770efded47aa95efbc266"},
-  {409650, "49c94d14ac4ed4b35f7f812d618595043094d6eb0baeec0e8f04a52857b13c69"}
+/*
+  {block_id, "block_id_hash"}
+  */
 };
 
 } // CryptoNote
