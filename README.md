@@ -37,6 +37,26 @@ msbuild BUKZ.sln /p:Configuration=Release
 
 Good luck!
 
+### macOS
+
+Dependencies: cmake boost and Xcode
+
+Download Xcode from the App store and the Xcode command line tools with `xcode-select --install`
+For the other we recommand you to use [Homebrew](https://brew.sh)
+
+Continue with:
+```
+brew install git cmake boost
+git clone https://github.com/bukzmatter/bukz.git
+cd bukz
+mkdir build && cd build
+cmake ..
+make
+```
+
+Good luck! The execultables can be found in `bukz/build/src`
+To use parallel build, use `make -j<threads>` instead of `make`
+
 ### Building for Android on Linux
 
 Set up the 32 bit toolchain
