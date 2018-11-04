@@ -95,7 +95,7 @@ const char     CRYPTONOTE_BLOCKCHAIN_INDICES_FILENAME[]      = "blockchainindice
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "bukz";
+const char     CRYPTONOTE_NAME[]                             = "amperon";
 const char     GENESIS_COINBASE_TX_HEX[]                     = "011c01ff0001c4c2a1a916029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121014d4e1a0e4c7abf887a7ac5cfe490040864e46ec794bc463fddd20e1a8a7c9e78";
 
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  1;
